@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Repository Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>GitHub Repository Finder</h1>
+    <select id="languageSelector">
+      <option value="">Select a Language</option>
+      <option value="javascript">JavaScript</option>
+      <option value="python">Python</option>
+      <option value="java">Java</option>
+      <option value="c++">C++</option>
+      <option value="ruby">Ruby</option>
+    </select>
+
+    <div id="stateContainer">
+      <!-- Empty State -->
+      <p id="emptyState">Please select a language</p>
+
+      <!-- Loading State -->
+      <p id="loadingState" style="display: none;">Loading, please wait...</p>
+
+      <!-- Error State -->
+      <div id="errorState" style="display: none;">
+        <p>Error fetching repositories</p>
+        <button id="retryButton">Click to retry</button>
+      </div>
+
+      <!-- Success State -->
+      <div id="repoContainer" style="display: none;">
+        <h3 id="repoName"></h3>
+        <p id="repoDescription"></p>
+        <p>⭐ Stars: <span id="repoStars"></span> | 🍴 Forks: <span id="repoForks"></span> | 🐞 Issues: <span id="repoIssues"></span></p>
+        <a id="repoLink" target="_blank">Visit Repository</a>
+        <button id="refreshButton">Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
